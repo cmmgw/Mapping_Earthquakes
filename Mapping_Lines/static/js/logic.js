@@ -52,7 +52,9 @@ let line = [
     [40.6413, -73.7781],
   ];
 
-// Create a polyline using the line coordinates and make the line blue and dashed.
+// Create a polyline using the line coordinates 
+// Make the route a blue dashed line, with a weight of 4 and opacity of 0.5 on the light map.
+
 L.polyline(line, {
     color: "blue",
     opacity: 0.5,
