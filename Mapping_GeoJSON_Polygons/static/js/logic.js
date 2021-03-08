@@ -49,6 +49,11 @@
 
 
 // SKILL DRILL
+// // 1)  Make the lines blue, with a weight of 1.
+// // 2)  Make the polygon fill color yellow.
+// // 3)  Add a popup to show each neighborhood.
+// // 4)  Make the default map layer Streets with Satellite Streets the second option.
+
 
 // Add console.log to check to see if code is working
 console.log("working")
@@ -97,7 +102,7 @@ let myStyle = {
 }
 
 // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function(data) {
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJson(data, {
