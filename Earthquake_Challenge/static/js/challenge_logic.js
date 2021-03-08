@@ -40,6 +40,7 @@ let baseMaps = {
 
 // Deliverable 1 & 2
 // 1. Add a 2nd layer group for the tectonic plate data.
+// 1. Add a 3rd layer group for the major earthquake data.
 let allEarthquakes = new L.LayerGroup();
 let tectonicPlates = new L.LayerGroup();
 let majorEarthquakes = new L.LayerGroup();
@@ -47,6 +48,7 @@ let majorEarthquakes = new L.LayerGroup();
 
 // Deliverable 1 & 2
 // 2. Add a reference to the tectonic plates group to the overlays object.
+// 2. Add a reference to the major earthquake group to the overlays object.
 let overlays = {
   "Earthquakes": allEarthquakes,
   "Tectonic Plates": tectonicPlates,
@@ -143,18 +145,19 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     }
 
     // Deliverable 2
-    // 5. Change the getColor() function to use three colors for the major earthquakes based on the magnitude of the earthquake
+    // 5. Change the color function to use three colors for the major earthquakes based on the magnitude of the earthquake
     function getColor(magnitude) {
       if (magnitude > 5) {
-        return "#922a31";
+        return "#ea2c2c";
       }
       if (magnitude > 4) {
-        return "#ffa500";
+        return "#ea822c";
       }
       if (magnitude < 4) {
-        return "#ffff00"
+        return "#eecc00"
       }
     }
+
 
     // Deliverable 2
     // 6. Use the function that determines the radius of the earthquake marker based on its magnitude.
@@ -231,9 +234,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // Deliverable 1
   // 3. Use d3.json to make a call to get our Tectonic Plate geoJSON data.
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (tdata) {
-    L.geoJson(tdata, {color: "#ea822c", weight: "3" }
-      
-
+    L.geoJson(tdata, { color: "#ea822c", weight: "1" }
 
     )
       .addTo(tectonicPlates);
