@@ -56,7 +56,7 @@ let baseMaps = {
   "Satellite": satelliteStreets,
   "Dark Mode": dark,
   "Light Mode": light,
- "Night Navigation": nightNavigation
+  "Night Navigation": nightNavigation
 };
 
 // Deliverable 1 & 2
