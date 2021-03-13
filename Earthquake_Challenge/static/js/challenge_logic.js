@@ -18,17 +18,9 @@ let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/sate
   accessToken: API_KEY
 });
 
-// Deliverable 3
+//Deliverable 3
 // 1. We create the third tile layer that will be the background of our map.
-// let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-//   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-//   maxZoom: 18,
-//   accessToken: API_KEY
-// });
-
-
-// Extra
-let outdoors = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
   accessToken: API_KEY
@@ -36,7 +28,15 @@ let outdoors = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11
 
 // Extra
 // Create a fourth tile layer
-let nightPreview = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-preview-night-v2/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+let light = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  accessToken: API_KEY
+});
+
+// Extra
+// Create a fifth tile layer
+let nightNavigation = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-preview-night-v2/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
   accessToken: API_KEY
@@ -50,13 +50,13 @@ let map = L.map('mapid', {
 });
 
 // Deliverable 3
-// 2. Create a base layer that holds all three maps.
+// 2. Create a base layer that holds all five maps.
 let baseMaps = {
   "Streets": streets,
   "Satellite": satelliteStreets,
-  // "Dark": dark
-  "Outdoors": outdoors,
- "Night Preview": nightPreview
+  "Dark Mode": dark,
+  "Light Mode": light,
+ "Night Navigation": nightNavigation
 };
 
 // Deliverable 1 & 2
