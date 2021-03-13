@@ -1,3 +1,6 @@
+// MapBox API key for GitHub
+const API_KEY = "pk.eyJ1IjoiY21tZ3ciLCJhIjoiY2ttNnpuMnl1MDZ1YTJ4bnVibGloeGNwMCJ9.6sQ8xIiAfRo9HZpSMdWKyw"
+
 // Add console.log to check to see if our code is working.
 console.log("working");
 
